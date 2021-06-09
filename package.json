@@ -1,0 +1,68 @@
+{
+  "name": "forge",
+  "displayName": "Forge",
+  "description": "",
+  "version": "0.0.1",
+  "activationEvents": [
+    "onCommand:forge-racket.loadFileInRepl"
+  ],
+  "main": "./out/extension",
+  "engines": {
+    "vscode": "^1.56.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "forge",
+        "aliases": [
+          "Forge",
+          "forge"
+        ],
+        "extensions": [
+          ".rkt"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "forge",
+        "scopeName": "source.forge",
+        "path": "./syntaxes/forge.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "forge.loadFileInRepl",
+        "title": "Load file in REPL",
+        "icon": {
+          "light": "images/repl-light.svg",
+          "dark": "images/repl-dark.svg"
+        }
+      },
+      {
+        "command": "forge.runFile",
+        "title": "Racket: Run file in terminal",
+        "icon": {
+          "light": "images/run.svg",
+          "dark": "images/run.svg"
+        }
+      },
+      {
+        "command": "forge.executeSelectionInRepl",
+        "title": "Racket: Execute selection in REPL"
+      },
+      {
+        "command": "forge.openRepl",
+        "title": "Racket: Open the REPL for the current file"
+      },
+      {
+        "command": "forge.showOutputTerminal",
+        "title": "Racket: Show the output terminal for the current file"
+      }
+    ]
+  }
+}
